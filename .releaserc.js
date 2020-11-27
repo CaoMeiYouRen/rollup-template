@@ -1,3 +1,4 @@
+const { name } = require('./package.json')
 module.exports = {
     plugins: [
         [
@@ -14,7 +15,7 @@ module.exports = {
             "@semantic-release/changelog",
             {
                 "changelogFile": "CHANGELOG.md",
-                "changelogTitle": "# auto-release-template"
+                "changelogTitle": "# " + name
             }
         ],
         '@semantic-release/npm',
