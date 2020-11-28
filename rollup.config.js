@@ -5,6 +5,7 @@ import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import _ from 'lodash'
 import { dependencies, name } from './package.json'
+const external = Object.keys(dependencies) // 默认不打包 dependencies
 const outputName = _.upperFirst(_.camelCase(name))// 导出的模块名称 PascalCase
 const env = process.env
 const IS_PROD = env.NODE_ENV === 'production'
@@ -40,8 +41,6 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
     }
     return plugins
 }
-
-const external = Object.keys(dependencies)
 
 export default [
     {
