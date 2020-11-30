@@ -23,9 +23,11 @@
     "rm": "rimraf node_modules",
     "start": "node ./dist/index",
     "release": "semantic-release",
-    "commit": "git add . && git cz"
+    "commit": "git add . && git cz",
+    "api": "api-extractor run"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.12.0",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
