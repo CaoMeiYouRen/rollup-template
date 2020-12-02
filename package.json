@@ -42,7 +42,7 @@
     "commitizen": "^4.2.2",
     "conventional-changelog-cli": "^2.1.1",
     "conventional-changelog-cmyr-config": "^1.2.3",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "debug": "^4.3.1",
     "eslint": "^7.14.0",
