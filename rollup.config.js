@@ -23,10 +23,11 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
     plugins.push(
         typescript({
             tsconfig: 'tsconfig.json',
+            module: 'esnext',
             esModuleInterop: true,
             allowSyntheticDefaultImports: true,
-            module: 'esnext',
             declaration: isDeclaration,
+            sourceMap: true,
         }),
     )
     plugins.push(
@@ -76,6 +77,7 @@ export default [
             file: 'dist/index.js', // 生成 cjs
             format: 'cjs',
             name: outputName,
+            sourcemap: true,
         },
         plugins: getPlugins({
             isBrowser: false,
@@ -90,6 +92,7 @@ export default [
             file: 'dist/index.umd.js', // 生成 umd
             format: 'umd',
             name: outputName,
+            sourcemap: true,
         },
         plugins: getPlugins({
             isBrowser: false,
@@ -104,6 +107,7 @@ export default [
             file: 'dist/index.esm.js', // 生成 esm
             format: 'esm',
             name: outputName,
+            sourcemap: true,
         },
         plugins: getPlugins({
             isBrowser: false,
