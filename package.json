@@ -8,6 +8,7 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -18,6 +19,8 @@
     "lint": "cross-env NODE_ENV=production eslint src --fix --ext .ts,.js",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production rollup -c",
+    "postbuild": "npm run build:type",
+    "build:type": "api-extractor run && rimraf \"dist/*[^index].d.ts\"",
     "analyzer": "cross-env NODE_ENV=production ANALYZER=true rollup -c",
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
     "dev:rollup": "cross-env NODE_ENV=development rollup -c",
@@ -27,6 +30,7 @@
     "commit": "git add . && git cz"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.13.1",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",

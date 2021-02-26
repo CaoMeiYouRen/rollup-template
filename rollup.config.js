@@ -22,9 +22,11 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
     )
     plugins.push(
         typescript({
-            tsconfig: isDeclaration ? 'tsconfig.json' : 'tsconfig.build.json',
+            tsconfig: 'tsconfig.json',
             esModuleInterop: true,
             allowSyntheticDefaultImports: true,
+            module: 'esnext',
+            declaration: isDeclaration,
         }),
     )
     plugins.push(
@@ -58,7 +60,7 @@ export default [
         external,
         output: {
             dir: 'dist',
-            format: 'cjs',
+            format: 'esm',
             name: outputName,
         },
         plugins: getPlugins({

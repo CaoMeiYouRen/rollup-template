@@ -1,3 +1,4 @@
+import { test } from './test'
 /**
  * say hello
  *
@@ -8,3 +9,4 @@
 export function hello() {
     console.log('hello'.toUpperCase())
 }
+export { test }
