@@ -117,7 +117,6 @@ export default [
     },
     {
         input: 'src/index.ts',
-        external,
         output: {
             file: 'dist/index.browser.js', // 生成 browser
             format: 'umd',
