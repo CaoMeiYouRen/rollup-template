@@ -5,7 +5,6 @@ on:
       - master
 jobs:
   release:
-    # if: contains(github.event.commit_comment.body,'feat') || contains(github.event.commit_comment.body,'fix')
     name: Release
     runs-on: ubuntu-latest
     steps:
