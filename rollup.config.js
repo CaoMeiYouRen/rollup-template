@@ -5,8 +5,8 @@ import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import analyzer from 'rollup-plugin-analyzer'
 import _ from 'lodash'
-import { peerDependencies, name } from './package.json'
-const external = Object.keys(peerDependencies) // 默认不打包 peerDependencies
+import { dependencies, peerDependencies, name } from './package.json'
+const external = Object.keys({ ...dependencies, ...peerDependencies }) // 默认不打包 dependencies, peerDependencies
 const outputName = _.upperFirst(_.camelCase(name))// 导出的模块名称 PascalCase
 const env = process.env
 const __PROD__ = env.NODE_ENV === 'production'
