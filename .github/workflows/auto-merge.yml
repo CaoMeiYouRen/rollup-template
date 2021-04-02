@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "14"
       - name: Cache multiple paths
-        uses: actions/cache@v2
+        uses: actions/cache@v2.3
         with:
           path: |
             ~/.npm
