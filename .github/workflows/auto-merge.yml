@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "14"
       - name: Cache multiple paths
-        uses: actions/cache@v2.3
+        uses: actions/cache@v2
         with:
           path: |
             ~/.npm
@@ -26,7 +26,7 @@ jobs:
       - run: yarn
       - run: npm run lint
       - run: npm run build
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2.3
         with:
           command: merge
           target: minor
