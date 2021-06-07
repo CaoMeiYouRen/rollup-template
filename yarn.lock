@@ -4620,10 +4620,10 @@ rollup-plugin-terser@^7.0.2:
     serialize-javascript "^4.0.0"
     terser "^5.0.0"
 
-rollup@^2.50.6:
-  version "2.50.6"
-  resolved "https://registry.nlark.com/rollup/download/rollup-2.50.6.tgz#24e2211caf9031081656e98a5e5e94d3b5e786e2"
-  integrity sha1-JOIhHK+QMQgWVumKXl6U07XnhuI=
+rollup@^2.51.0:
+  version "2.51.0"
+  resolved "https://registry.nlark.com/rollup/download/rollup-2.51.0.tgz?cache=0&sync_timestamp=1623046011400&other_urls=https%3A%2F%2Fregistry.nlark.com%2Frollup%2Fdownload%2Frollup-2.51.0.tgz#ffd847882283998fc8611cd57af917f173b4ab5c"
+  integrity sha1-/9hHiCKDmY/IYRzVevkX8XO0q1w=
   optionalDependencies:
     fsevents "~2.3.1"
 
