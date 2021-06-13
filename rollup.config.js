@@ -4,10 +4,10 @@ import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import analyzer from 'rollup-plugin-analyzer'
-import _ from 'lodash'
+import { upperFirst, camelCase } from 'lodash-es'
 import { dependencies, peerDependencies, name } from './package.json'
 const external = Object.keys({ ...dependencies, ...peerDependencies }) // 默认不打包 dependencies, peerDependencies
-const outputName = _.upperFirst(_.camelCase(name))// 导出的模块名称 PascalCase
+const outputName = upperFirst(camelCase(name))// 导出的模块名称 PascalCase
 const env = process.env
 const __PROD__ = env.NODE_ENV === 'production'
 const __DEV__ = env.NODE_ENV === 'development'
@@ -116,18 +116,18 @@ export default [
             isMin: false,
         }),
     },
-    {
-        input: 'src/index.ts',
-        output: {
-            file: 'dist/index.browser.js', // 生成 browser
-            format: 'umd',
-            name: outputName,
-            sourcemap: true,
-        },
-        plugins: getPlugins({
-            isBrowser: true,
-            isDeclaration: false,
-            isMin: true,
-        }),
-    },
+    // { //"browser": "dist/index.browser.js",
+    //     input: 'src/index.ts',
+    //     output: {
+    //         file: 'dist/index.browser.js', // 生成 browser
+    //         format: 'umd',
+    //         name: outputName,
+    //         sourcemap: true,
+    //     },
+    //     plugins: getPlugins({
+    //         isBrowser: true,
+    //         isDeclaration: false,
+    //         isMin: true,
+    //     }),
+    // },
 ]
