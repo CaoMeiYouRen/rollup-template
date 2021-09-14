@@ -30,7 +30,7 @@
     "commit": "git add . && git cz"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.18.7",
+    "@microsoft/api-extractor": "^7.18.9",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
