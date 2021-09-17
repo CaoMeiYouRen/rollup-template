@@ -39,7 +39,7 @@
     "@semantic-release/git": "^9.0.1",
     "@types/debug": "^4.1.7",
     "@types/lodash": "^4.14.173",
-    "@types/node": "^16.9.1",
+    "@types/node": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "commitizen": "^4.2.3",
