@@ -6,6 +6,7 @@ import json from '@rollup/plugin-json'
 import analyzer from 'rollup-plugin-analyzer'
 import { upperFirst, camelCase } from 'lodash'
 import { dependencies, peerDependencies, name } from './package.json'
+import { defineConfig } from 'rollup'
 const external = Object.keys({ ...dependencies, ...peerDependencies }) // 默认不打包 dependencies, peerDependencies
 const outputName = upperFirst(camelCase(name))// 导出的模块名称 PascalCase
 const env = process.env
@@ -56,7 +57,7 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
     return plugins
 }
 
-export default [
+export default defineConfig([
     {
         input: 'src/index.ts', // 生成类型文件
         external,
@@ -90,21 +91,6 @@ export default [
         input: 'src/index.ts',
         external,
         output: {
-            file: 'dist/index.umd.js', // 生成 umd
-            format: 'umd',
-            name: outputName,
-            sourcemap: true,
-        },
-        plugins: getPlugins({
-            isBrowser: false,
-            isDeclaration: false,
-            isMin: true,
-        }),
-    },
-    {
-        input: 'src/index.ts',
-        external,
-        output: {
             file: 'dist/index.esm.js', // 生成 esm
             format: 'esm',
             name: outputName,
@@ -116,10 +102,10 @@ export default [
             isMin: false,
         }),
     },
-    // { //"browser": "dist/index.browser.js",
+    // {
     //     input: 'src/index.ts',
     //     output: {
-    //         file: 'dist/index.browser.js', // 生成 browser
+    //         file: 'dist/index.browser.js', // 生成 browser umd
     //         format: 'umd',
     //         name: outputName,
     //         sourcemap: true,
@@ -130,4 +116,18 @@ export default [
     //         isMin: true,
     //     }),
     // },
-]
+    // {
+    //     input: 'src/index.ts',
+    //     output: {
+    //         file: 'dist/index.browser.esm.js', // 生成 browser esm
+    //         format: 'esm',
+    //         name: outputName,
+    //         sourcemap: true,
+    //     },
+    //     plugins: getPlugins({
+    //         isBrowser: true,
+    //         isDeclaration: false,
+    //         isMin: true,
+    //     }),
+    // },
+])
