@@ -1,12 +1,13 @@
+import { upperFirst, camelCase } from 'lodash'
+import { defineConfig } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import analyzer from 'rollup-plugin-analyzer'
-import { upperFirst, camelCase } from 'lodash'
 import { dependencies, peerDependencies, name } from './package.json'
-import { defineConfig } from 'rollup'
+
 const external = Object.keys({ ...dependencies, ...peerDependencies }) // 默认不打包 dependencies, peerDependencies
 const outputName = upperFirst(camelCase(name))// 导出的模块名称 PascalCase
 const env = process.env
