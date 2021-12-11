@@ -6,6 +6,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
 import analyzer from 'rollup-plugin-analyzer'
+import replace from '@rollup/plugin-replace'
 import { dependencies, peerDependencies, name } from './package.json'
 
 const external = Object.keys({ ...dependencies, ...peerDependencies }) // 默认不打包 dependencies, peerDependencies
@@ -27,19 +28,24 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
             tsconfig: 'tsconfig.json',
             module: 'esnext',
             target: 'es2019', // node >= 12
-            esModuleInterop: true,
-            allowSyntheticDefaultImports: true,
             declaration: isDeclaration,
             sourceMap: true,
         }),
     )
     plugins.push(
         commonjs({
-            sourceMap: false,
+            sourceMap: true,
         }),
     )
     plugins.push(
         json({}),
+    )
+    plugins.push(
+        replace({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            'env.NODE_ENV': JSON.stringify(env.NODE_ENV),
+            preventAssignment: true,
+        }),
     )
     if (isMin) {
         plugins.push(
@@ -66,6 +72,7 @@ export default defineConfig([
             dir: 'dist',
             format: 'esm',
             name: outputName,
+            sourcemap: true,
         },
         plugins: getPlugins({
             isBrowser: false,

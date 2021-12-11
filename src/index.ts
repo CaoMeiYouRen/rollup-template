@@ -1,4 +1,5 @@
 import { test } from './test'
+import { __PROD__, __DEV__ } from './env'
 /**
  * say hello
  *
@@ -7,6 +8,12 @@ import { test } from './test'
  * @export
  */
 export function hello() {
-    console.log('hello'.toUpperCase())
+    if (__PROD__) {
+        console.log('Hello production')
+    }
+    if (__DEV__) {
+        console.log('Hello development')
+
+    }
 }
 export { test }
