@@ -30,7 +30,7 @@
     "commit": "git add . && git cz"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.0.3",
+    "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "@microsoft/api-extractor": "^7.19.4",
     "@rollup/plugin-commonjs": "^21.0.1",
