@@ -52,7 +52,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "debug": "^4.3.4",
     "eslint": "^8.16.0",
-    "eslint-config-cmyr": "^1.1.18",
+    "eslint-config-cmyr": "^1.1.19",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.2",
     "lodash": "^4.17.21",
