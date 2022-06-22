@@ -27,7 +27,8 @@
     "rm": "rimraf node_modules",
     "start": "node ./dist/index",
     "release": "semantic-release",
-    "commit": "git add . && git cz"
+    "commit": "git add . && git cz",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",

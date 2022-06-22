@@ -1,4 +1,3 @@
-import { test } from './test'
 import { __PROD__, __DEV__ } from './env'
 /**
  * say hello
@@ -16,4 +15,3 @@ export function hello() {
 
     }
 }
-export { test }
