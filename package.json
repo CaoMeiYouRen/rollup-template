@@ -44,7 +44,7 @@
     "@types/debug": "^4.1.7",
     "@types/lodash": "^4.14.182",
     "@types/node": "^18.7.5",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "commitizen": "^4.2.5",
     "conventional-changelog-cli": "^2.2.2",
