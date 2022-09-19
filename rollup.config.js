@@ -1,4 +1,3 @@
-import { upperFirst, camelCase } from 'lodash'
 import { defineConfig } from 'rollup'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
@@ -8,6 +7,19 @@ import json from '@rollup/plugin-json'
 import analyzer from 'rollup-plugin-analyzer'
 import replace from '@rollup/plugin-replace'
 import { dependencies, peerDependencies, name } from './package.json'
+
+const upperFirst = (str) => (str ? str.charAt(0).toUpperCase() + str.slice(1) : '')
+
+function camelCase(str) {
+    return str
+        .replace(/(?:^\w|[A-Z]|\b\w)/g, (letter, index) => (index === 0
+            ? letter.toLowerCase()
+            : letter.toUpperCase()),
+        )
+        .replace(/-|\s+/g, '')
+}
+
+const sourceMap = true
 
 const external = Object.keys({ ...dependencies, ...peerDependencies }) // 默认不打包 dependencies, peerDependencies
 const outputName = upperFirst(camelCase(name))// 导出的模块名称 PascalCase
@@ -29,12 +41,12 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
             module: 'esnext',
             target: 'es2019', // node >= 12
             declaration: isDeclaration,
-            sourceMap: true,
+            sourceMap,
         }),
     )
     plugins.push(
         commonjs({
-            sourceMap: true,
+            sourceMap,
         }),
     )
     plugins.push(
@@ -72,7 +84,7 @@ export default defineConfig([
             dir: 'dist',
             format: 'esm',
             name: outputName,
-            sourcemap: true,
+            sourcemap: sourceMap,
         },
         plugins: getPlugins({
             isBrowser: false,
@@ -83,27 +95,20 @@ export default defineConfig([
     {
         input: 'src/index.ts',
         external,
-        output: {
-            file: 'dist/index.js', // 生成 cjs
-            format: 'cjs',
-            name: outputName,
-            sourcemap: true,
-        },
-        plugins: getPlugins({
-            isBrowser: false,
-            isDeclaration: false,
-            isMin: false,
-        }),
-    },
-    {
-        input: 'src/index.ts',
-        external,
-        output: {
-            file: 'dist/index.esm.js', // 生成 esm
-            format: 'esm',
-            name: outputName,
-            sourcemap: true,
-        },
+        output: [
+            {
+                file: 'dist/index.js', // 生成 cjs
+                format: 'cjs',
+                name: outputName,
+                sourcemap: sourceMap,
+            },
+            {
+                file: 'dist/index.esm.js', // 生成 esm
+                format: 'esm',
+                name: outputName,
+                sourcemap: true,
+            },
+        ],
         plugins: getPlugins({
             isBrowser: false,
             isDeclaration: false,
@@ -112,26 +117,19 @@ export default defineConfig([
     },
     // {
     //     input: 'src/index.ts',
-    //     output: {
-    //         file: 'dist/index.browser.js', // 生成 browser umd
-    //         format: 'umd',
-    //         name: outputName,
-    //         sourcemap: true,
-    //     },
-    //     plugins: getPlugins({
-    //         isBrowser: true,
-    //         isDeclaration: false,
-    //         isMin: true,
-    //     }),
-    // },
-    // {
-    //     input: 'src/index.ts',
-    //     output: {
-    //         file: 'dist/index.browser.esm.js', // 生成 browser esm
-    //         format: 'esm',
-    //         name: outputName,
-    //         sourcemap: true,
-    //     },
+    //     output: [
+    //         {
+    //             file: 'dist/index.browser.js', // 生成 browser umd
+    //             format: 'umd',
+    //             name: outputName,
+    //             sourcemap: sourceMap,
+    //         }, {
+    //             file: 'dist/index.browser.esm.js', // 生成 browser esm
+    //             format: 'esm',
+    //             name: outputName,
+    //             sourcemap: true,
+    //         },
+    //     ],
     //     plugins: getPlugins({
     //         isBrowser: true,
     //         isDeclaration: false,
