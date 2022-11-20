@@ -106,7 +106,7 @@ export default defineConfig([
                 file: 'dist/index.esm.js', // 生成 esm
                 format: 'esm',
                 name: outputName,
-                sourcemap: true,
+                sourcemap: sourceMap,
             },
         ],
         plugins: getPlugins({
@@ -127,7 +127,7 @@ export default defineConfig([
     //             file: 'dist/index.browser.esm.js', // 生成 browser esm
     //             format: 'esm',
     //             name: outputName,
-    //             sourcemap: true,
+    //             sourcemap: sourceMap,
     //         },
     //     ],
     //     plugins: getPlugins({
