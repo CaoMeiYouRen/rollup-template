@@ -103,7 +103,7 @@ export default defineConfig([
                 sourcemap: sourceMap,
             },
             {
-                file: 'dist/index.esm.js', // 生成 esm
+                file: 'dist/index.mjs', // 生成 esm
                 format: 'esm',
                 name: outputName,
                 sourcemap: sourceMap,

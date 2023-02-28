@@ -12,6 +12,5 @@ export function hello() {
     }
     if (__DEV__) {
         console.log('Hello development')
-
     }
 }
