@@ -18,9 +18,6 @@
     "lint": "cross-env NODE_ENV=production eslint src --fix --ext .ts,.js",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production rollup -c",
-    "postbuild": "npm run build:type",
-    "build:type": "api-extractor run",
-    "postbuild:type": "rimraf \"dist/**/!(*.?(c|m)js?(.map)|index.d.ts)\" --glob",
     "analyzer": "cross-env NODE_ENV=production ANALYZER=true rollup -c",
     "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
     "dev:rollup": "cross-env NODE_ENV=development rollup -c -w",
@@ -33,11 +30,11 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "@microsoft/api-extractor": "^7.34.4",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-terser": "^0.4.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/git": "^10.0.1",
@@ -47,7 +44,7 @@
     "@typescript-eslint/parser": "^5.55.0",
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
-    "conventional-changelog-cmyr-config": "^2.0.4",
+    "conventional-changelog-cmyr-config": "^2.1.0",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "debug": "^4.3.4",
@@ -56,14 +53,13 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "rimraf": "^4.4.0",
-    "rollup": "^2.79.1",
+    "rollup": "^3.19.1",
     "rollup-plugin-analyzer": "^4.0.0",
-    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-dts": "^5.2.0",
     "semantic-release": "^19.0.5",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^4.9.5",
-    "validate-commit-msg": "^2.14.0"
+    "typescript": "^4.9.5"
   },
   "config": {
     "commitizen": {
@@ -72,12 +68,6 @@
   },
   "changelog": {
     "language": "zh"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "validate-commit-msg"
-    }
   },
   "lint-staged": {
     "*.{js,ts}": [
