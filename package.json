@@ -59,7 +59,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "rimraf": "^5.0.0",
-    "rollup": "^3.21.8",
+    "rollup": "^3.22.0",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-dts": "^5.3.0",
     "semantic-release": "^19.0.5",
