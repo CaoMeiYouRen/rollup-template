@@ -4,7 +4,7 @@ import terser from '@rollup/plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
-import analyzer from 'rollup-plugin-analyzer'
+import { visualizer } from "rollup-plugin-visualizer";
 import replace from '@rollup/plugin-replace'
 import dts from 'rollup-plugin-dts'
 import fs from 'fs'
@@ -71,8 +71,12 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
     }
     if (__ANALYZER__) {
         plugins.push(
-            analyzer({
+            // analyzer({
 
+            // }),
+            visualizer({
+                filename: 'temp/stats.html',
+                open:true
             }),
         )
     }
