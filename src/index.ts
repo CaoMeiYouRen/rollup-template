@@ -1,4 +1,4 @@
-import { __PROD__, __DEV__ } from './env'
+import { __PROD__, __DEV__ } from '@/env'
 /**
  * say hello
  *

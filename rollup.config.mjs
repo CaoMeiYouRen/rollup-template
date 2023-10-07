@@ -4,10 +4,12 @@ import terser from '@rollup/plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import json from '@rollup/plugin-json'
-import { visualizer } from "rollup-plugin-visualizer";
+import { visualizer } from 'rollup-plugin-visualizer'
 import replace from '@rollup/plugin-replace'
 import dts from 'rollup-plugin-dts'
+import alias from '@rollup/plugin-alias'
 import fs from 'fs'
+import path from 'path'
 
 const { dependencies, peerDependencies, name } = JSON.parse(fs.readFileSync('./package.json'))
 
@@ -48,6 +50,13 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
         }),
     )
     plugins.push(
+        alias({
+            entries: [
+                { find: '@', replacement: path.resolve('./src') },
+            ],
+        })
+    )
+    plugins.push(
         commonjs({
             sourceMap,
         }),
@@ -76,7 +85,7 @@ function getPlugins({ isBrowser = false, isMin = false, isDeclaration = false })
             // }),
             visualizer({
                 filename: 'temp/stats.html',
-                open:true
+                open: true,
             }),
         )
     }
