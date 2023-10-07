@@ -2198,10 +2198,10 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.nlark.com/escape-string-regexp/download/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha1-FLqDpdNz49MR5a/KKc9b+tllvzQ=
 
-eslint-config-cmyr@^1.1.28:
-  version "1.1.28"
-  resolved "https://registry.yarnpkg.com/eslint-config-cmyr/-/eslint-config-cmyr-1.1.28.tgz#37b013a06111492ebfc8f3038ef1101b8b37d166"
-  integrity sha512-p+zoxZahMOmTiShSQChXLJXRVLDjq8OHMGgD0PYlxTmMITq604jnQ6VRo/NZJ8oAlXa1oo77pMqESvYUqhbtgA==
+eslint-config-cmyr@^1.1.30:
+  version "1.1.30"
+  resolved "https://registry.yarnpkg.com/eslint-config-cmyr/-/eslint-config-cmyr-1.1.30.tgz#85f16287a183622b10344658a2619383e8bd2321"
+  integrity sha512-79sOX0nqYqg/lytlUvK4q6DMGRhLJ5uCWdjg/bIJZzLgWNb4lw0a0V2Ulg2z3Pvt0g/26ZY6d/t5WQ2Ki7qYlw==
 
 eslint-scope@^5.1.1:
   version "5.1.1"
