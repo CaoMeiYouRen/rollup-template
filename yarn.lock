@@ -3834,7 +3834,7 @@ magic-string@^0.27.0:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
 
-magic-string@^0.30.3:
+magic-string@^0.30.4:
   version "0.30.4"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.4.tgz#c2c683265fc18dda49b56fc7318d33ca0332c98c"
   integrity sha512-Q/TKtsC5BPm0kGqgBIF9oXAs/xEf2vRKiIB4wCRQTJOQIByZ1d+NnUOotvJOvNpi5RNIgVOMC3pOuaP1ZTDlVg==
@@ -5133,12 +5133,12 @@ rimraf@^5.0.5:
   dependencies:
     glob "^10.3.7"
 
-rollup-plugin-dts@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-dts/-/rollup-plugin-dts-6.0.2.tgz#a32bd89ddca1471e9dcdcbd6dbc91e3a56734570"
-  integrity sha512-GYCCy9DyE5csSuUObktJBpjNpW2iLZMabNDIiAqzQWBl7l/WHzjvtAXevf8Lftk8EA920tuxeB/g8dM8MVMR6A==
+rollup-plugin-dts@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-dts/-/rollup-plugin-dts-6.1.0.tgz#56e9c5548dac717213c6a4aa9df523faf04f75ae"
+  integrity sha512-ijSCPICkRMDKDLBK9torss07+8dl9UpY9z1N/zTeA1cIqdzMlpkV3MOOC7zukyvQfDyxa1s3Dl2+DeiP/G6DOw==
   dependencies:
-    magic-string "^0.30.3"
+    magic-string "^0.30.4"
   optionalDependencies:
     "@babel/code-frame" "^7.22.13"
 
