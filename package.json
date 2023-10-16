@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.8.0",
-    "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/config-conventional": "^17.8.0",
     "@rollup/plugin-alias": "^5.0.1",
     "@rollup/plugin-commonjs": "^25.0.5",
     "@rollup/plugin-json": "^6.0.1",
