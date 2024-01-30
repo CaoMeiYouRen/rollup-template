@@ -47,7 +47,7 @@
     "@semantic-release/git": "^10.0.1",
     "@types/debug": "^4.1.12",
     "@types/node": "^20.11.10",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.19.1",
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^4.1.0",
