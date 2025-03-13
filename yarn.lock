@@ -2462,10 +2462,10 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.nlark.com/escape-string-regexp/download/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha1-FLqDpdNz49MR5a/KKc9b+tllvzQ=
 
-eslint-config-cmyr@^1.1.32:
-  version "1.1.32"
-  resolved "https://registry.yarnpkg.com/eslint-config-cmyr/-/eslint-config-cmyr-1.1.32.tgz#5a1c53f774e586854b72afbacf81d0832c1863f3"
-  integrity sha512-dK4atnEPl4twuEpOzdyRvE6JaxDoIJizKIMDdTpca2ZY1b5TosgVnfpXj9lT+hkm4jj2jMsFk2rXVe/u0bgNTg==
+eslint-config-cmyr@^1.1.33:
+  version "1.1.33"
+  resolved "https://registry.yarnpkg.com/eslint-config-cmyr/-/eslint-config-cmyr-1.1.33.tgz#f1df1b25fd3645f723f97acc2931eee558feafaa"
+  integrity sha512-jv1OjVgK5SBRnP/+srmjg7eMO9pVep+lDPLBsvXa6rg1XRwNo9yQWmzbiz5WDECJDWQYQ56oYgXyP/EgALHyFA==
 
 eslint-scope@^7.2.2:
   version "7.2.2"
