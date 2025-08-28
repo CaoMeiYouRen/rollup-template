@@ -1897,14 +1897,13 @@ conventional-changelog-cli@^5.0.0:
     meow "^13.0.0"
     tempfile "^5.0.0"
 
-conventional-changelog-cmyr-config@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-cmyr-config/-/conventional-changelog-cmyr-config-2.1.2.tgz#1765e73f46df7245ac6ae091b782672cfae4f93c"
-  integrity sha512-JucNefNoVC1StkGTSKeFRZgOLOsXnmqd3CoaxoI1QPZ093slTdhQrt1doTARJKzvmL+4RL80LiSRneH1mdRSmw==
+conventional-changelog-cmyr-config@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-cmyr-config/-/conventional-changelog-cmyr-config-3.0.0.tgz#22a73d9722f8d17442c8b23a03a43c7ed2134418"
+  integrity sha512-QhD/0545XRgspCcopi2d5L8ffFdiqsaqqcQfGRprv18CVH0NUQUtfORpbNqEOWwl1VxYj1pZUcVyxHTSfam1Xg==
   dependencies:
     compare-func "^2.0.0"
     debug "^4.1.1"
-    q "^1.5.1"
 
 conventional-changelog-codemirror@^5.0.0:
   version "5.0.0"
@@ -4754,11 +4753,6 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.nlark.com/punycode/download/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
-
-q@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
-  integrity sha512-kV/CThkXo6xyFEZUugw/+pIOywXcDbFYgSct5cT3gqlbkBE1SJdwy6UQoZvodiWF/ckQLZyDE/Bu1M6gVu5lVw==
 
 qrcode-terminal@^0.12.0:
   version "0.12.0"
