@@ -61,7 +61,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "rimraf": "^6.1.2",
-    "rollup": "^4.57.0",
+    "rollup": "^4.57.1",
     "rollup-plugin-dts": "^6.3.0",
     "rollup-plugin-visualizer": "^6.0.5",
     "semantic-release": "^25.0.2",
